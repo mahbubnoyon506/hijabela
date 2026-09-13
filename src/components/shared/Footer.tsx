@@ -1,0 +1,169 @@
+"use client";
+
+import * as React from "react";
+import Link from "next/link";
+import { Feather, Mail, MapPin, Phone, Send } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+
+export type FooterLink = {
+    label: string;
+    href: string;
+};
+
+export type FooterColumn = {
+    title: string;
+    links: FooterLink[];
+};
+
+export type FooterProps = {
+    brandName?: string;
+    logoHref?: string;
+    phone?: string;
+    address?: string;
+    columns?: FooterColumn[];
+    newsletterPlaceholder?: string;
+    onSubscribe?: (email: string) => void;
+    /** Overrides the auto-generated "© {year} {brandName}. All rights reserved." */
+    copyrightText?: string;
+    className?: string;
+};
+
+const DEFAULT_COLUMNS: FooterColumn[] = [
+    {
+        title: "Company",
+        links: [
+            { label: "About Us", href: "/about" },
+            { label: "Blog", href: "/blog" },
+        ],
+    },
+    {
+        title: "Support",
+        links: [
+            { label: "Help Center", href: "/help" },
+            { label: "Contact Us", href: "/contact" },
+        ],
+    },
+    {
+        title: "Legal",
+        links: [
+            { label: "Privacy Policy", href: "/privacy" },
+            { label: "Terms of Service", href: "/terms" },
+            { label: "Refund Policy", href: "/refund" },
+        ],
+    },
+    {
+        title: "Shop",
+        links: [
+            { label: "All Products", href: "/products" },
+            { label: "Flash Sales", href: "/flash-sales" },
+        ],
+    },
+];
+
+export function Footer({
+    brandName = "Hijabela",
+    logoHref = "/",
+    phone,
+    address,
+    columns = DEFAULT_COLUMNS,
+    newsletterPlaceholder = "Email for product updates",
+    onSubscribe,
+    copyrightText,
+    className,
+}: FooterProps) {
+    const [email, setEmail] = React.useState("");
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        if (!email.trim()) return;
+        onSubscribe?.(email.trim());
+        setEmail("");
+    };
+
+    return (
+        <footer className={cn("w-full border-t bg-muted/30", className)}>
+            <div className="mx-auto max-w-[1920px] px-6 py-12 sm:px-8 lg:px-10">
+                <div className="grid grid-cols-1 gap-10 lg:grid-cols-[280px_repeat(4,1fr)] lg:gap-8">
+                    {/* Brand + contact */}
+                    <div className="flex flex-col gap-3">
+                        <Link
+                            href={logoHref}
+                            className="flex w-fit items-center gap-1.5 text-2xl font-semibold italic text-blue-950 dark:text-blue-200"
+                        >
+                            <span className="font-serif">{brandName}</span>
+                        </Link>
+
+                        {phone && (
+                            <a
+                                href={`tel:${phone.replace(/\s+/g, "")}`}
+                                className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-foreground"
+                            >
+                                <Phone className="size-4 shrink-0" />
+                                {phone}
+                            </a>
+                        )}
+
+                        {address && (
+                            <div className="flex items-start gap-2 text-sm text-foreground/80">
+                                <MapPin className="size-4 shrink-0 translate-y-0.5" />
+                                <span>{address}</span>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Link columns */}
+                    {columns.map((column) => (
+                        <div key={column.title} className="flex flex-col gap-3">
+                            <h3 className="text-xs font-semibold uppercase tracking-widest text-foreground">
+                                {column.title}
+                            </h3>
+                            <ul className="flex flex-col gap-2.5">
+                                {column.links.map((link) => (
+                                    <li key={link.label}>
+                                        <Link
+                                            href={link.href}
+                                            className="text-sm text-foreground/70 transition-colors hover:text-foreground"
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Newsletter + copyright */}
+                <div className="mt-10 flex flex-col items-start gap-6 border-t pt-8 sm:flex-row sm:items-center sm:justify-between">
+                    <form
+                        onSubmit={handleSubmit}
+                        className="flex w-full max-w-md items-center gap-2 rounded-full border bg-background p-1.5 pl-4 shadow-sm sm:w-auto"
+                    >
+                        <Mail className="size-4 shrink-0 text-muted-foreground" />
+                        <input
+                            type="email"
+                            required
+                            value={email}
+                            onChange={(event) => setEmail(event.target.value)}
+                            placeholder={newsletterPlaceholder}
+                            className="w-full min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground sm:w-56"
+                        />
+                        <button
+                            type="submit"
+                            className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-blue-950 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-900"
+                        >
+                            <Send className="size-3.5" />
+                            Subscribe
+                        </button>
+                    </form>
+
+                    <p className="text-sm text-muted-foreground">
+                        {copyrightText ??
+                            `© ${new Date().getFullYear()} ${brandName}. All rights reserved.`}
+                    </p>
+                </div>
+            </div>
+        </footer>
+    );
+}
