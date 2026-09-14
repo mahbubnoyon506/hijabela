@@ -3,6 +3,7 @@ import { Crimson_Pro, Montserrat } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import { Header } from "@/components/shared/Header";
+import { Footer } from "@/components/shared/Footer";
 
 const crimsonPro = Crimson_Pro({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           <Header />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

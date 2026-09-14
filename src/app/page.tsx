@@ -80,11 +80,6 @@ export default function Home() {
         backgroundEffect
       /> */}
 
-      <Footer
-        phone="+8801320380755"
-        address="House #35, Road #7, Block G, Dhaka-1213, Bangladesh"
-        onSubscribe={(email) => console.log("subscribed:", email)}
-      />
     </div>
   );
 }

@@ -7,27 +7,14 @@ import { Feather, Mail, MapPin, Phone, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
-export type FooterLink = {
+type FooterLink = {
     label: string;
     href: string;
 };
 
-export type FooterColumn = {
+type FooterColumn = {
     title: string;
     links: FooterLink[];
-};
-
-export type FooterProps = {
-    brandName?: string;
-    logoHref?: string;
-    phone?: string;
-    address?: string;
-    columns?: FooterColumn[];
-    newsletterPlaceholder?: string;
-    onSubscribe?: (email: string) => void;
-    /** Overrides the auto-generated "© {year} {brandName}. All rights reserved." */
-    copyrightText?: string;
-    className?: string;
 };
 
 const DEFAULT_COLUMNS: FooterColumn[] = [
@@ -62,34 +49,24 @@ const DEFAULT_COLUMNS: FooterColumn[] = [
     },
 ];
 
-export function Footer({
-    brandName = "Hijabela",
-    logoHref = "/",
-    phone,
-    address,
-    columns = DEFAULT_COLUMNS,
-    newsletterPlaceholder = "Email for product updates",
-    onSubscribe,
-    copyrightText,
-    className,
-}: FooterProps) {
+export function Footer() {
     const [email, setEmail] = React.useState("");
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (!email.trim()) return;
-        onSubscribe?.(email.trim());
+        console.log("subscribed:", email.trim());
         setEmail("");
     };
 
     return (
-        <footer className={cn("font-secondary w-full border-t bg-muted/30", className)}>
+        <footer className={cn("font-secondary w-full border-t bg-muted/30")}>
             <div className="mx-auto max-w-[1920px] px-4 py-5 sm:px-6 md:py-8 lg:px-8 lg:py-12">
                 <div className="grid grid-cols-1 gap-10 lg:grid-cols-[280px_repeat(4,1fr)] lg:gap-8">
                     {/* Brand + contact */}
                     <div className="flex flex-col gap-3">
                         <Link
-                            href={logoHref}
+                            href="/"
                             className="flex w-fit items-center gap-1.5 text-2xl font-semibold italic text-blue-950 dark:text-blue-200"
                         >
                             <Image
@@ -100,26 +77,22 @@ export function Footer({
                             />
                         </Link>
 
-                        {phone && (
-                            <a
-                                href={`tel:${phone.replace(/\s+/g, "")}`}
-                                className="flex items-center gap-2 text-xs text-foreground/80 transition-colors hover:text-foreground"
-                            >
-                                <Phone className="size-4 shrink-0" />
-                                {phone}
-                            </a>
-                        )}
+                        <a
+                            href="tel:+8801320380755"
+                            className="flex items-center gap-2 text-xs text-foreground/80 transition-colors hover:text-foreground"
+                        >
+                            <Phone className="size-4 shrink-0" />
+                            +8801320380755
+                        </a>
 
-                        {address && (
-                            <div className="flex items-start gap-2 text-xs text-foreground/80">
-                                <MapPin className="size-4 shrink-0 translate-y-0.5" />
-                                <span>{address}</span>
-                            </div>
-                        )}
+                        <div className="flex items-start gap-2 text-xs text-foreground/80">
+                            <MapPin className="size-4 shrink-0 translate-y-0.5" />
+                            <span>House #35, Road #7, Block G, Dhaka-1213, Bangladesh</span>
+                        </div>
                     </div>
 
                     {/* Link columns */}
-                    {columns.map((column) => (
+                    {DEFAULT_COLUMNS.map((column) => (
                         <div key={column.title} className="flex flex-col gap-3">
                             <h3 className="text-xs font-semibold uppercase tracking-[0.7px] text-foreground">
                                 {column.title}
@@ -152,7 +125,7 @@ export function Footer({
                             required
                             value={email}
                             onChange={(event) => setEmail(event.target.value)}
-                            placeholder={newsletterPlaceholder}
+                            placeholder="Email for product updates"
                             className="w-full min-w-0 flex-1 bg-transparent text-xs outline-none placeholder:text-muted-foreground sm:w-56"
                         />
                         <button
@@ -165,8 +138,7 @@ export function Footer({
                     </form>
 
                     <p className="text-xs text-muted-foreground">
-                        {copyrightText ??
-                            `© ${new Date().getFullYear()} ${brandName}. All rights reserved.`}
+                        {`© ${new Date().getFullYear()} Hijabela. All rights reserved.`}
                     </p>
                 </div>
             </div>
