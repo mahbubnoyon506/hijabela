@@ -157,7 +157,7 @@ export function Footer({
                         />
                         <button
                             type="submit"
-                            className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-blue-950 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-900"
+                            className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-[#013966] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#013966]"
                         >
                             <Send className="size-3.5" />
                             Subscribe

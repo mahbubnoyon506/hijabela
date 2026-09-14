@@ -29,11 +29,11 @@ const slides = [
     id: 1,
     type: "image",
     src: "/assets/images/product-1.jpg",
-    heading: "Find Bangladesh's Top Voice Artists in One Click",
-    subheading: "100+ Verified Artists | TVC/OVC | Audiobooks | IVR | Animation",
+    heading: "We are more than just a clothing brand",
+    subheading: "We prioritize natural and responsibly sourced fabrics across our collections.",
     ctas: [
-      { label: "BECOME A VAAB MEMBER", href: "/join", variant: "solid" },
-      { label: "SEE UPCOMING EVENTS", href: "/events", variant: "outline" },
+      // { label: "BECOME A VAAB MEMBER", href: "/join", variant: "solid" },
+      { label: "Explore Products", href: "/shop", variant: "outline" },
     ],
   },
 ] satisfies BannerSlide[];

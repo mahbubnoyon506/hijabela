@@ -127,7 +127,7 @@ export function Banner({
                             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/10" />
 
                             {/* Content */}
-                            <div className="relative z-10 flex h-full flex-col justify-end gap-4 px-6 pb-14 sm:px-10 sm:pb-16 md:px-14">
+                            <div className="relative z-10 flex h-full flex-col justify-end gap-4 px-6 pb-14 sm:px-10 sm:pb-16 md:px-8">
                                 {slide.eyebrow && (
                                     <span className="text-xs font-semibold uppercase tracking-widest text-white/90">
                                         {slide.eyebrow}

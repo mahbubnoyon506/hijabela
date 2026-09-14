@@ -28,7 +28,7 @@ export type ProductCardProps = {
 };
 
 const ICON_BUTTON =
-    "flex size-9 items-center justify-center rounded-full bg-background/95 text-foreground shadow-sm ring-1 ring-border transition-all duration-300 ease-out hover:bg-primary hover:text-primary-foreground hover:ring-primary";
+    "cursor-pointer flex size-9 items-center justify-center rounded-full bg-background/95 text-foreground shadow-sm transition-all duration-300 ease-out hover:bg-primary hover:text-primary-foreground hover:ring-primary";
 
 const HIDDEN_UNTIL_HOVER =
     "translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 group-focus-within:translate-x-0 group-focus-within:opacity-100";
@@ -133,7 +133,7 @@ export function ProductCard({
                     <button
                         type="button"
                         onClick={() => onAddToCart?.(id)}
-                        className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-md bg-background/95 px-3 py-2 font-secondary text-xs tracking-[2px] font-semibold text-foreground shadow-sm ring-1 ring-border transition-colors hover:bg-secondary"
+                        className="cursor-pointer inline-flex flex-1 items-center justify-center gap-1.5 rounded-md bg-background/95 px-3 py-3 font-secondary text-xs tracking-[2px] font-semibold text-foreground shadow-sm ring-1 ring-border transition-colors hover:bg-secondary"
                     >
                         <ShoppingCart className="size-3.5" />
                         Add to Cart
@@ -141,7 +141,7 @@ export function ProductCard({
                     <button
                         type="button"
                         onClick={() => onBuyNow?.(id)}
-                        className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-md bg-primary px-3 py-2 font-secondary text-xs tracking-[2px] font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+                        className="cursor-pointer inline-flex flex-1 items-center justify-center gap-1.5 rounded-md bg-primary px-3 py-3 font-secondary text-xs tracking-[2px] font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
                     >
                         <Zap className="size-3.5" />
                         Buy Now
@@ -154,7 +154,7 @@ export function ProductCard({
                 {href ? (
                     <Link
                         href={href}
-                        className="text-base font-medium tracking-[2px] line-clamp-2 text-foreground hover:underline"
+                        className="mb-2 text-base font-medium tracking-[2px] min-h-12 line-clamp-2 text-foreground hover:underline"
                     >
                         {name}
                     </Link>
@@ -170,11 +170,11 @@ export function ProductCard({
                             {currency} {compareAtPrice!.toFixed(2)}
                         </span>
                     )}
-                    <span className="text-sm tracking-[2px] text-red-600 dark:text-red-400">
+                    <span className="text-sm tracking-[2px] text-primary dark:text-primary">
                         {currency} {price.toFixed(2)}
                     </span>
                     {discountPercent !== null && (
-                        <span className="rounded bg-red-50 px-1.5 py-0.5 text-xs tracking-[2px] text-red-600 dark:bg-red-500/10 dark:text-red-400">
+                        <span className="rounded bg-red-50 px-1.5 py-0.5 text-xs tracking-[2px] text-primary dark:bg-red-500/10 dark:text-primary">
                             {discountPercent}% off
                         </span>
                     )}
