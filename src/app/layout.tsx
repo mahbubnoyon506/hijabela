@@ -1,7 +1,18 @@
 import type { Metadata } from "next";
+import { Crimson_Pro, Montserrat } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import { Header } from "@/components/shared/Header";
+
+const crimsonPro = Crimson_Pro({
+  subsets: ["latin"],
+  variable: "--font-crimson-pro",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
 
 export const metadata: Metadata = {
   title: "shadcn Theme Starter",
@@ -13,7 +24,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       suppressHydrationWarning
-      className="h-full antialiased"
+      className={`${crimsonPro.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <ThemeProvider

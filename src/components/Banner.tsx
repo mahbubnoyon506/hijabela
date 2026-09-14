@@ -47,7 +47,7 @@ export function Banner({
     autoplay = true,
     autoplaySpeed = 6000,
     className,
-    heightClassName = "h-[420px] sm:h-[480px] md:h-[802px]",
+    heightClassName = "h-[420px] sm:h-[480px] md:h-[600px]",
 }: BannerProps) {
     const sliderRef = React.useRef<Slider | null>(null);
     const videoRefs = React.useRef<Array<HTMLVideoElement | null>>([]);
@@ -129,17 +129,17 @@ export function Banner({
                             {/* Content */}
                             <div className="relative z-10 flex h-full flex-col justify-end gap-4 px-6 pb-14 sm:px-10 sm:pb-16 md:px-14">
                                 {slide.eyebrow && (
-                                    <span className="text-xs font-semibold uppercase tracking-widest text-amber-300/90">
+                                    <span className="text-xs font-semibold uppercase tracking-widest text-white/90">
                                         {slide.eyebrow}
                                     </span>
                                 )}
 
-                                <h2 className="max-w-2xl font-serif text-3xl font-bold leading-tight text-amber-300 drop-shadow-sm sm:text-4xl md:text-[2.75rem]">
+                                <h2 className="max-w-2xl leading-tight text-white drop-shadow-sm text-primary text-xl md:text-2xl lg:text-4xl font-light tracking-[2.9px]">
                                     {slide.heading}
                                 </h2>
 
                                 {slide.subheading && (
-                                    <p className="max-w-2xl text-sm font-medium text-white/90 sm:text-base">
+                                    <p className="max-w-2xl font-secondary text-base tracking-[2px] text-white/90">
                                         {slide.subheading}
                                     </p>
                                 )}
@@ -155,10 +155,10 @@ export function Banner({
                                                     key={cta.label}
                                                     href={cta.href}
                                                     className={cn(
-                                                        "inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-transform hover:scale-[1.02]",
+                                                        "inline-flex items-center gap-2 rounded-full px-6 py-3 font-secondary text-xs tracking-[2px] font-semibold transition-transform hover:scale-[1.02]",
                                                         isSolid
-                                                            ? "bg-gradient-to-r from-amber-300 to-yellow-500 text-blue-950 shadow-sm hover:from-amber-200 hover:to-yellow-400"
-                                                            : "border border-amber-200/60 text-white hover:bg-white/10"
+                                                            ? "bg-gradient-to-r from-white to-yellow-500 text-blue-950 shadow-sm hover:from-white-200 hover:to-yellow-400"
+                                                            : "border border-white-200/60 text-white hover:bg-white/10"
                                                     )}
                                                 >
                                                     {cta.label}
@@ -166,7 +166,7 @@ export function Banner({
                                                         <span
                                                             className={cn(
                                                                 "inline-flex size-6 items-center justify-center rounded-full",
-                                                                isSolid ? "bg-blue-950/10" : "bg-amber-300/90"
+                                                                isSolid ? "bg-blue-950/10" : "bg-white/90"
                                                             )}
                                                         >
                                                             <ArrowUpRight
@@ -201,7 +201,7 @@ export function Banner({
                                 "pointer-events-auto size-2.5 rounded-full transition-all",
                                 index === activeIndex
                                     ? "w-5 bg-emerald-500"
-                                    : "bg-amber-200/50 hover:bg-amber-200/80"
+                                    : "bg-white-200/50 hover:bg-white-200/80"
                             )}
                         />
                     ))}

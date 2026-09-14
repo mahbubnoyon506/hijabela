@@ -58,7 +58,7 @@ export function ProductCard({
     return (
         <div
             className={cn(
-                "group relative flex flex-col overflow-hidden bg-card",
+                "group relative flex flex-col overflow-hidden bg-card font-secondary",
                 className
             )}
         >
@@ -133,7 +133,7 @@ export function ProductCard({
                     <button
                         type="button"
                         onClick={() => onAddToCart?.(id)}
-                        className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-md bg-background/95 px-3 py-2 text-xs font-semibold text-foreground shadow-sm ring-1 ring-border transition-colors hover:bg-secondary"
+                        className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-md bg-background/95 px-3 py-2 font-secondary text-xs tracking-[2px] font-semibold text-foreground shadow-sm ring-1 ring-border transition-colors hover:bg-secondary"
                     >
                         <ShoppingCart className="size-3.5" />
                         Add to Cart
@@ -141,7 +141,7 @@ export function ProductCard({
                     <button
                         type="button"
                         onClick={() => onBuyNow?.(id)}
-                        className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-md bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+                        className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-md bg-primary px-3 py-2 font-secondary text-xs tracking-[2px] font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
                     >
                         <Zap className="size-3.5" />
                         Buy Now
@@ -154,27 +154,27 @@ export function ProductCard({
                 {href ? (
                     <Link
                         href={href}
-                        className="line-clamp-2 text-sm font-medium text-foreground hover:underline"
+                        className="text-base font-medium tracking-[2px] line-clamp-2 text-foreground hover:underline"
                     >
                         {name}
                     </Link>
                 ) : (
-                    <p className="line-clamp-2 text-sm font-medium text-foreground">
+                    <p className="text-base tracking-[2px] line-clamp-2 text-foreground">
                         {name}
                     </p>
                 )}
 
                 <div className="flex flex-wrap items-center gap-2">
                     {hasDiscount && (
-                        <span className="text-sm text-muted-foreground line-through">
+                        <span className="text-sm tracking-[2px] text-muted-foreground line-through">
                             {currency} {compareAtPrice!.toFixed(2)}
                         </span>
                     )}
-                    <span className="text-base font-semibold text-red-600 dark:text-red-400">
+                    <span className="text-sm tracking-[2px] text-red-600 dark:text-red-400">
                         {currency} {price.toFixed(2)}
                     </span>
                     {discountPercent !== null && (
-                        <span className="rounded bg-red-50 px-1.5 py-0.5 text-xs font-medium text-red-600 dark:bg-red-500/10 dark:text-red-400">
+                        <span className="rounded bg-red-50 px-1.5 py-0.5 text-xs tracking-[2px] text-red-600 dark:bg-red-500/10 dark:text-red-400">
                             {discountPercent}% off
                         </span>
                     )}

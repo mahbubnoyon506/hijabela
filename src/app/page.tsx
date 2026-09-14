@@ -14,6 +14,8 @@ import { ProductCard } from "@/components/shared/ProductCard";
 import { OfferBanner } from "@/components/OfferBanner";
 import { Footer } from "@/components/shared/Footer";
 import { VideoCollage } from "@/components/VideoCollage";
+import NewArrivals from "@/components/NewArrivals";
+import PopularProducts from "@/components/PopularProducts";
 
 const slides = [
   // {
@@ -54,18 +56,7 @@ export default function Home() {
 
       <Banner slides={slides} />
       <CategoryCarousel categories={categories} />
-      <div className=" grid grid-cols-1 gap-4 px-4 py-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
-        <ProductCard id={1}
-          name="Beautiful Oil Painted Multicolor Women Satin Silk Scarf"
-          image="/assets/images/product-1.jpg"
-          hoverImage="/assets/images/product-2.jpg"
-          price={690}
-          compareAtPrice={790}
-          badge="Sale"
-          href="/products/scarf"
-          onAddToCart={(id) => console.log("add to cart", id)}
-          onBuyNow={(id) => console.log("buy now", id)} />
-      </div>
+      <NewArrivals />
 
       <VideoCollage
         items={[
@@ -77,20 +68,9 @@ export default function Home() {
       />
 
 
-      <div className=" grid grid-cols-1 gap-4 px-4 py-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
-        <ProductCard id={1}
-          name="Beautiful Oil Painted Multicolor Women Satin Silk Scarf"
-          image="/assets/images/product-1.jpg"
-          hoverImage="/assets/images/product-2.jpg"
-          price={690}
-          compareAtPrice={790}
-          badge="Sale"
-          href="/products/scarf"
-          onAddToCart={(id) => console.log("add to cart", id)}
-          onBuyNow={(id) => console.log("buy now", id)} />
-      </div>
+      <PopularProducts />
 
-      <OfferBanner
+      {/* <OfferBanner
         eyebrow="Limited Time"
         heading="Get 25% Off Your First Order"
         description="Sign up today and unlock exclusive discounts on new arrivals."
@@ -98,7 +78,7 @@ export default function Home() {
         image="/assets/images/product-1.jpg"
         imageOpacity={0.6}
         backgroundEffect
-      />
+      /> */}
 
       <Footer
         phone="+8801320380755"
