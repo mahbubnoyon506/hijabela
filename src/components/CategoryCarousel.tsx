@@ -97,7 +97,7 @@ export function CategoryCarousel({
 function CategoryCard({ category }: { category: CategoryItem }) {
     const content = (
         <div className="flex flex-col items-center gap-3">
-            <div className="size-32 overflow-hidden rounded-full bg-muted ring-1 ring-border sm:size-36 md:size-40">
+            <div className="size-32 overflow-hidden rounded-full bg-muted sm:size-36 md:size-48">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                     src={category.image}
