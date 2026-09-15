@@ -22,17 +22,16 @@ const slides = [
   //   id: 2,
   //   type: "video",
   //   src: "/assets/images/banner-video.mp4",
-  //   poster: "/assets/images/product-1.jpg",
+  //   poster: "/assets/images/photo.png",
   //   heading: ""
   // },
   {
     id: 1,
     type: "image",
-    src: "/assets/images/product-1.jpg",
+    src: "/assets/images/download.jpeg",
     heading: "We are more than just a clothing brand",
     subheading: "We prioritize natural and responsibly sourced fabrics across our collections.",
     ctas: [
-      // { label: "BECOME A VAAB MEMBER", href: "/join", variant: "solid" },
       { label: "Explore Products", href: "/shop", variant: "outline" },
     ],
   },
@@ -41,12 +40,12 @@ const slides = [
 const categories = [
   { id: 1, name: "Skin Care", image: "/assets/images/category-1.png" },
   { id: 2, name: "Hair", image: "/assets/images/category-2.png" },
-  { id: 3, name: "Jewellery", image: "/assets/images/category-3.png", href: "/category/jewellery" },
-  { id: 4, name: "Bags", image: "/assets/images/category-4.png" },
-  // { id: 5, name: "Belts", image: "/assets/images/category-5.png" },
-  // { id: 6, name: "Kids", image: "/assets/images/category-6.png" },
-  // { id: 7, name: "Kids", image: "/assets/images/category-7.png" },
-  // { id: 8, name: "Kids", image: "/assets/images/category-8.png" },
+  { id: 3, name: "Jewellery", image: "/assets/images/category-1.png", href: "/category/jewellery" },
+  { id: 4, name: "Bags", image: "/assets/images/category-2.png" },
+  // { id: 5, name: "Belts", image: "/assets/images/category-1.png" },
+  // { id: 6, name: "Kids", image: "/assets/images/category-2.png" },
+  // { id: 7, name: "Kids", image: "/assets/images/category-1.png" },
+  // { id: 8, name: "Kids", image: "/assets/images/category-2.png" },
 ]
 
 
@@ -75,7 +74,7 @@ export default function Home() {
         heading="Get 25% Off Your First Order"
         description="Sign up today and unlock exclusive discounts on new arrivals."
         cta={{ label: "Shop the Offer", href: "/shop" }}
-        image="/assets/images/product-1.jpg"
+        image="/assets/images/photo.png"
         imageOpacity={0.6}
         backgroundEffect
       /> */}

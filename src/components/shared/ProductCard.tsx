@@ -31,7 +31,7 @@ const ICON_BUTTON =
     "cursor-pointer flex size-9 items-center justify-center rounded-full bg-background/95 text-foreground shadow-sm transition-all duration-300 ease-out hover:bg-primary hover:text-primary-foreground hover:ring-primary";
 
 const HIDDEN_UNTIL_HOVER =
-    "translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 group-focus-within:translate-x-0 group-focus-within:opacity-100";
+    "translate-x-0 opacity-100 lg:translate-x-6 lg:opacity-0 lg:group-hover:translate-x-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-x-0 lg:group-focus-within:opacity-100";
 
 export function ProductCard({
     id,
@@ -124,10 +124,10 @@ export function ProductCard({
                 {/* Bottom action buttons — overlaid on the image, so the card never grows */}
                 <div
                     className={cn(
-                        "absolute inset-x-0 bottom-0 z-20 flex translate-y-full gap-2 p-3 opacity-0",
+                        "absolute inset-x-0 bottom-0 z-20 flex translate-y-0 gap-2 p-3 opacity-100",
                         "transition-all duration-300 ease-out",
-                        "group-hover:translate-y-0 group-hover:opacity-100",
-                        "group-focus-within:translate-y-0 group-focus-within:opacity-100"
+                        "lg:translate-y-full lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100",
+                        "lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
                     )}
                 >
                     <button

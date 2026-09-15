@@ -22,8 +22,8 @@ const products: ProductCardProps[] = [
     {
         id: 2,
         name: "Classic Printed Satin Silk Scarf",
-        image: "/assets/images/product-2.jpg",
-        hoverImage: "/assets/images/product-1.jpg",
+        image: "/assets/images/photo-1.jpeg",
+        hoverImage: "/assets/images/photo.png",
         price: 720,
         href: "/products/classic-scarf",
     },
@@ -38,8 +38,8 @@ const products: ProductCardProps[] = [
     {
         id: 4,
         name: "Soft Everyday Modal Hijab",
-        image: "/assets/images/product-2.jpg",
-        hoverImage: "/assets/images/product-1.jpg",
+        image: "/assets/images/photo.png",
+        hoverImage: "/assets/images/photo-1.jpeg",
         price: 490,
         compareAtPrice: 550,
         badge: "Sale",
@@ -56,8 +56,8 @@ const products: ProductCardProps[] = [
     {
         id: 6,
         name: "Premium Floral Silk Scarf",
-        image: "/assets/images/product-2.jpg",
-        hoverImage: "/assets/images/product-1.jpg",
+        image: "/assets/images/photo-1.jpeg",
+        hoverImage: "/assets/images/photo.png",
         price: 850,
         href: "/products/floral-silk-scarf",
     },

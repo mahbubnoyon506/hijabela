@@ -95,10 +95,10 @@ export default function ContactUs({
                 </div>
 
                 {/* Main Grid Container */}
-                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
 
                     {/* Contact Details Card */}
-                    <div className="lg:col-span-5 bg-white rounded-2xl border border-gray-100 p-6 sm:p-8 transition-all">
+                    <div className="lg:col-span-5 bg-white rounded-2xl border border-gray-100 p-6 sm:p-8 transition-all h-full flex flex-col">
 
                         {/* Card Header */}
                         <div className="flex items-center gap-3 pb-6 mb-6 border-b border-gray-100">
@@ -172,9 +172,9 @@ export default function ContactUs({
                     </div>
 
                     {/* Contact Form Card */}
-                    <div className="lg:col-span-7 bg-white rounded-2xl border border-gray-100  p-6 sm:p-8">
+                    <div className="lg:col-span-7 bg-white rounded-2xl border border-gray-100 p-6 sm:p-8 h-full flex flex-col">
 
-                        <form onSubmit={handleSubmit} className="space-y-5">
+                        <form onSubmit={handleSubmit} className="space-y-5 h-full">
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                 {/* Full Name */}
@@ -323,7 +323,7 @@ export default function ContactUs({
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
-                        allowFullScreen=""
+                        allowFullScreen={true}
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
                         className="w-full h-full grayscale-[20%] contrast-[105%] hover:grayscale-0 transition-all duration-500" />

@@ -13,6 +13,7 @@ export type CategoryItem = {
 
 export type CategoryCarouselProps = {
     title?: string;
+    subTitle?: string;
     categories: CategoryItem[];
     className?: string;
     maxVisible?: number;
