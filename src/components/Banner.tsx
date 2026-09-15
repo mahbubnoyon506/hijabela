@@ -118,7 +118,7 @@ export function Banner({
                                 <img
                                     src={slide.src as string}
                                     alt={slide.alt ?? ""}
-                                    className="absolute inset-0 size-full object-cover"
+                                    className="absolute inset-0 size-full object-fit xl:object-cover"
                                     loading={index === 0 ? "eager" : "lazy"}
                                 />
                             )}
