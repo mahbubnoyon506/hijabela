@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const missionValues = [
     {
-        title: "100% Authentic Cotton",
+        title: "100% Authentic",
         description:
             "We use only handpicked, premium-quality cotton yarn, giving you unmatched comfort even in the heat.",
     },
@@ -60,10 +60,10 @@ export default function AboutPage() {
 
         <main className="bg-background font-secondary text-foreground">
             <section className="mx-auto max-w-[1920px] text-center px-4 pt-8 sm:px-6 md:pt-12 lg:px-8 lg:pt-24">
-                <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                <h1 className="text-primary text-xl md:text-2xl lg:text-4xl font-light tracking-[2.9px] text-foreground ">
                     Our Journey
                 </h1>
-                <p className="mx-auto mt-5 max-w-2xl text-balance text-muted-foreground">
+                <p className="mx-auto mt-5 max-w-2xl text-base tracking-[2px] text-muted-foreground">
                     Born from a dream to blend Bangladesh&apos;s heritage with modern
                     elegance, Hijabela&apos;s journey began with a simple belief — a
                     saree isn&apos;t just clothing, it&apos;s a reflection of a
@@ -91,7 +91,7 @@ export default function AboutPage() {
 
             {/* Why Hijabela */}
             <section className="mx-auto max-w-[1920px] px-4 py-8 sm:px-6 md:py-12 lg:px-8 lg:py-24">
-                <h2 className="text-center text-2xl font-bold text-foreground sm:text-3xl">
+                <h2 className="text-center text-primary text-xl md:text-2xl lg:text-4xl font-light tracking-[2.9px] text-foregroundl">
                     Why Hijabela is right for you?
                 </h2>
 
@@ -101,10 +101,10 @@ export default function AboutPage() {
                             key={value.title}
                             className="rounded-xl border bg-secondary/20 p-6 text-center"
                         >
-                            <h3 className="font-semibold text-foreground">
+                            <h3 className="font-secondary font-semibold text-base tracking-[2px] text-foreground">
                                 {value.title}
                             </h3>
-                            <p className="mt-2 text-sm text-muted-foreground">
+                            <p className="mt-2 font-secondary text-sm tracking-[2px] text-muted-foreground">
                                 {value.description}
                             </p>
                         </div>
@@ -132,10 +132,10 @@ export default function AboutPage() {
             {/* Lifestyle banner */}
             <section className="mx-auto max-w-[1920px] px-4 py-8 sm:px-6 md:py-12 lg:px-8 lg:py-24">
                 <div className="text-center">
-                    <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+                    <h2 className="text-primary text-xl md:text-2xl lg:text-4xl font-light tracking-[2.9px]text-foreground">
                         Dress in Heritage Colors, Every Day
                     </h2>
-                    <p className="mx-auto mt-3 max-w-2xl text-balance text-muted-foreground">
+                    <p className="mx-auto mt-3 max-w-2xl text-base tracking-[2px] text-muted-foreground">
                         Discover modern elegance rooted in traditional style. We
                         don&apos;t just sell sarees — we tell the story of being
                         Bengali.
@@ -167,10 +167,10 @@ export default function AboutPage() {
                             <div className="mx-auto flex size-12 items-center justify-center rounded-full border bg-background">
                                 <Icon className="size-5 text-foreground/70" />
                             </div>
-                            <h3 className="mt-4 font-semibold text-foreground">
+                            <h3 className="mt-4 text-base tracking-[2px] font-semibold text-foreground">
                                 {title}
                             </h3>
-                            <p className="mt-2 text-sm text-muted-foreground">
+                            <p className="mt-2 text-sm tracking-[2px] text-muted-foreground">
                                 {description}
                             </p>
                         </div>
@@ -221,10 +221,10 @@ function ValueSplit({
                         reverse ? "order-1 md:order-1" : "order-1 md:order-2"
                     }
                 >
-                    <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+                    <h2 className="text-primary text-xl md:text-2xl lg:text-4xl font-light tracking-[2.9px] text-foreground">
                         {heading}
                     </h2>
-                    <p className="mt-4 text-muted-foreground">{children}</p>
+                    <p className="mt-4 text-muted-foreground text-base tracking-[2px]">{children}</p>
                 </div>
             </div>
         </section>

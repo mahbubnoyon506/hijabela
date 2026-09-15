@@ -77,18 +77,18 @@ export default function ContactUs({
 
     return (
         <>
-            <section className={cn("w-full px-4 py-8 md:py-12 lg:py-20 sm:px-6 lg:px-8", className)}>
+            <section className={cn("font-secondary w-full px-4 py-8 md:py-12 lg:py-20 sm:px-6 lg:px-8", className)}>
 
                 {/* Header Text */}
                 <div className="text-center mb-10 md:mb-16">
                     <p className="text-xs md:text-sm font-semibold tracking-[2.9px] text-primary uppercase mb-2">
                         Get in touch
                     </p>
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-[1px] text-foreground mb-3">
+                    <h1 className="text-primary text-xl md:text-2xl lg:text-4xl font-light tracking-[2.9px] text-foreground mb-3">
                         {title}
                     </h1>
                     {subTitle && (
-                        <p className="font-secondary text-sm md:text-base text-gray-600 tracking-[0.5px]">
+                        <p className="font-secondary text-base tracking-[2px] text-foreground">
                             {subTitle}
                         </p>
                     )}
@@ -98,7 +98,7 @@ export default function ContactUs({
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
                     {/* Contact Details Card */}
-                    <div className="lg:col-span-5 bg-white rounded-2xl border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.05)] p-6 sm:p-8 transition-all hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)]">
+                    <div className="lg:col-span-5 bg-white rounded-2xl border border-gray-100 p-6 sm:p-8 transition-all">
 
                         {/* Card Header */}
                         <div className="flex items-center gap-3 pb-6 mb-6 border-b border-gray-100">
@@ -107,7 +107,7 @@ export default function ContactUs({
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
                                 </svg>
                             </div>
-                            <h2 className="text-xl font-semibold text-foreground tracking-[0.5px]">Contact details</h2>
+                            <h2 className="text-primary text-base md:text-lg lg:text-xl font-light tracking-[2px] text-foreground">Contact details</h2>
                         </div>
 
                         {/* Contact Info List */}
@@ -122,7 +122,7 @@ export default function ContactUs({
                                 </div>
                                 <div>
                                     <p className="text-xs font-semibold tracking-wider text-gray-400 uppercase mb-1">Phone</p>
-                                    <a href={phoneHref} className="text-sm sm:text-base font-medium text-foreground hover:text-primary transition-colors flex items-center gap-2 flex-wrap">
+                                    <a href={phoneHref} className="text-sm font-medium tracking-[2px] text-foreground flex items-center gap-2 flex-wrap">
                                         {phoneNumber}
                                         <span className="inline-flex items-center gap-1 text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full font-semibold border border-emerald-200">
                                             WhatsApp
@@ -140,7 +140,7 @@ export default function ContactUs({
                                 </div>
                                 <div>
                                     <p className="text-xs font-semibold tracking-wider text-gray-400 uppercase mb-1">Email</p>
-                                    <a href={`mailto:${email}`} className="text-sm sm:text-base font-medium text-foreground hover:text-primary transition-colors">
+                                    <a href={`mailto:${email}`} className="text-sm font-medium tracking-[2px] text-foreground flex items-center gap-2 flex-wrap">
                                         {email}
                                     </a>
                                 </div>
@@ -156,7 +156,7 @@ export default function ContactUs({
                                 </div>
                                 <div>
                                     <p className="text-xs font-semibold tracking-wider text-gray-400 uppercase mb-1">Address</p>
-                                    <p className="text-sm sm:text-base font-medium text-foreground leading-relaxed">
+                                    <p className="text-sm font-medium tracking-[2px] text-foreground flex items-center gap-2 flex-wrap">
                                         {address}
                                     </p>
                                 </div>
@@ -166,20 +166,20 @@ export default function ContactUs({
 
                         {/* Support Hours Footer */}
                         <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
-                            <span>{supportHours}</span>
-                            <span className="text-primary font-semibold">UTC+6</span>
+                            {supportHours}
+
                         </div>
                     </div>
 
                     {/* Contact Form Card */}
-                    <div className="lg:col-span-7 bg-white rounded-2xl border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.05)] p-6 sm:p-8">
+                    <div className="lg:col-span-7 bg-white rounded-2xl border border-gray-100  p-6 sm:p-8">
 
                         <form onSubmit={handleSubmit} className="space-y-5">
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                 {/* Full Name */}
                                 <div>
-                                    <label htmlFor="fullName" className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">
+                                    <label htmlFor="fullName" className="block text-sm font-semibold tracking-[2px] text-foreground mb-2">
                                         Full Name <span className="text-red-500">*</span>
                                     </label>
                                     <input
@@ -195,7 +195,7 @@ export default function ContactUs({
 
                                 {/* Email Address */}
                                 <div>
-                                    <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">
+                                    <label htmlFor="email" className="block text-sm font-semibold tracking-[2px] text-foreground mb-2">
                                         Email Address <span className="text-red-500">*</span>
                                     </label>
                                     <input
@@ -213,7 +213,7 @@ export default function ContactUs({
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                 {/* Phone Number */}
                                 <div>
-                                    <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">
+                                    <label htmlFor="phone" className="block text-sm font-semibold tracking-[2px] text-foreground mb-2">
                                         Phone Number
                                     </label>
                                     <input
@@ -228,7 +228,7 @@ export default function ContactUs({
 
                                 {/* Subject */}
                                 <div>
-                                    <label htmlFor="subject" className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">
+                                    <label htmlFor="subject" className="block text-sm font-semibold tracking-[2px] text-foreground mb-2">
                                         Subject <span className="text-red-500">*</span>
                                     </label>
                                     <input
@@ -245,7 +245,7 @@ export default function ContactUs({
 
                             {/* Message */}
                             <div>
-                                <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">
+                                <label htmlFor="message" className="block text-sm font-semibold tracking-[2px] text-foreground mb-2">
                                     Message <span className="text-red-500">*</span>
                                 </label>
                                 <textarea
@@ -269,7 +269,7 @@ export default function ContactUs({
                                     onChange={handleChange}
                                     className="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary accent-primary cursor-pointer"
                                 />
-                                <label htmlFor="privacy" className="text-xs sm:text-sm text-gray-600 cursor-pointer select-none">
+                                <label htmlFor="privacy" className="font-secondary text-xs tracking-[1px] cursor-pointer select-none">
                                     I agree to the privacy policy <span className="text-red-500">*</span>
                                 </label>
                             </div>
@@ -285,7 +285,7 @@ export default function ContactUs({
                                         <span>Sending...</span>
                                     ) : (
                                         <>
-                                            <span>Send message</span>
+                                            <span className="text-xs font-secondary font-semibold tracking-[2px]">Send message</span>
                                             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                             </svg>
@@ -337,8 +337,8 @@ export default function ContactUs({
                             </svg>
                         </div>
                         <div>
-                            <p className="text-xs font-bold text-foreground">Studio Location</p>
-                            <p className="text-[11px] text-gray-500 truncate">{address}</p>
+                            <p className="text-sm font-semibold tracking-[2px] text-foreground">Studio Location</p>
+                            <p className="text-xs tracking-[1px]">{address}</p>
                         </div>
                     </div>
                 </div>

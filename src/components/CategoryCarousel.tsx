@@ -46,9 +46,8 @@ export function CategoryCarousel({
 
             <div className="flex w-full flex-wrap items-start justify-center gap-x-10 gap-y-8 lg:justify-items-center">
                 {categories.map((category) => (
-
-                    <div className="flex flex-col items-center gap-3">
-                        <div key={category.id} className="size-36 overflow-hidden rounded-full bg-muted sm:size-40 md:size-64">
+                    <div key={category.id} className="flex flex-col items-center gap-3">
+                        <div className="size-36 overflow-hidden rounded-full bg-muted sm:size-40 md:size-64">
                             <img
                                 src={category.image}
                                 alt={category.name}
