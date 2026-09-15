@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
     Bell,
     Feather,
@@ -36,11 +37,14 @@ const NAV_ITEMS = [
 ];
 
 export function Header() {
+    const pathname = usePathname();
     const [isScrolled, setIsScrolled] = React.useState(false);
     const [mobileSearchOpen, setMobileSearchOpen] = React.useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
     const [desktopMenuOpen, setDesktopMenuOpen] = React.useState(false);
     const [language, setLanguage] = React.useState("US EN");
+
+    const isNavActive = (href: string) => href === "/" ? pathname === "/" : pathname.startsWith(href);
 
     React.useEffect(() => {
         const onScroll = () => {
@@ -233,16 +237,25 @@ export function Header() {
                         aria-label="Main navigation"
                         aria-hidden={!desktopMenuOpen}
                     >
-                        {NAV_ITEMS.map((item) => (
-                            <Link
-                                key={item.href}
-                                href={item.href}
-                                tabIndex={desktopMenuOpen ? 0 : -1}
-                                className="font-secondary text-base text-foreground/70 transition-colors hover:text-foreground"
-                            >
-                                {item.label}
-                            </Link>
-                        ))}
+                        {NAV_ITEMS.map((item) => {
+                            const active = isNavActive(item.href);
+
+                            return (
+                                <Link
+                                    key={item.href}
+                                    href={item.href}
+                                    tabIndex={desktopMenuOpen ? 0 : -1}
+                                    aria-current={active ? "page" : undefined}
+                                    className={cn(
+                                        "border-t-2 border-transparent pt-2 font-secondary text-base text-foreground/70 transition-all duration-200 ease-out",
+                                        "hover:border-primary hover:text-foreground",
+                                        active && "border-primary text-foreground"
+                                    )}
+                                >
+                                    {item.label}
+                                </Link>
+                            );
+                        })}
                     </nav>
                 </div>
 
@@ -322,15 +335,24 @@ export function Header() {
                 className="hidden items-center justify-center gap-8 border-b border-border/60 bg-card py-3 lg:flex"
                 aria-label="Main navigation"
             >
-                {NAV_ITEMS.map((item) => (
-                    <Link
-                        key={item.href}
-                        href={item.href}
-                        className="font-secondary text-base text-foreground/70 transition-colors hover:text-foreground"
-                    >
-                        {item.label}
-                    </Link>
-                ))}
+                {NAV_ITEMS.map((item) => {
+                    const active = isNavActive(item.href);
+
+                    return (
+                        <Link
+                            key={item.href}
+                            href={item.href}
+                            aria-current={active ? "page" : undefined}
+                            className={cn(
+                                "border-t-2 border-transparent pt-2 font-secondary text-base text-foreground/70 transition-all duration-200 ease-out",
+                                "hover:border-primary hover:text-foreground",
+                                active && "border-primary text-foreground"
+                            )}
+                        >
+                            {item.label}
+                        </Link>
+                    );
+                })}
             </nav>
         </>
     );
