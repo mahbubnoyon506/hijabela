@@ -68,6 +68,23 @@ const arrowButtonClassName =
 
 export default function NewArrivals() {
     const sliderRef = React.useRef<Slider | null>(null);
+    const [slidesToShow, setSlidesToShow] = React.useState(1);
+
+    React.useEffect(() => {
+        const updateSlides = () => {
+            const width = window.innerWidth;
+
+            if (width >= 1280) setSlidesToShow(4);
+            else if (width >= 1024) setSlidesToShow(3);
+            else if (width >= 768) setSlidesToShow(2);
+            else setSlidesToShow(1);
+        };
+
+        updateSlides();
+        window.addEventListener("resize", updateSlides);
+
+        return () => window.removeEventListener("resize", updateSlides);
+    }, []);
 
     if (products.length === 0) return null;
 
@@ -97,29 +114,11 @@ export default function NewArrivals() {
                     autoplay={products.length > 1}
                     autoplaySpeed={3500}
                     cssEase="ease-in-out"
-                    infinite={products.length > 5}
+                    infinite={products.length > slidesToShow}
                     pauseOnHover
                     slidesToScroll={1}
-                    slidesToShow={5}
+                    slidesToShow={slidesToShow}
                     speed={500}
-                    responsive={[
-                        {
-                            breakpoint: 1280,
-                            settings: { slidesToShow: 4 },
-                        },
-                        {
-                            breakpoint: 1024,
-                            settings: { slidesToShow: 3 },
-                        },
-                        {
-                            breakpoint: 768,
-                            settings: { slidesToShow: 2 },
-                        },
-                        {
-                            breakpoint: 520,
-                            settings: { slidesToShow: 1 },
-                        },
-                    ]}
                 >
                     {products.map((product) => (
                         <div key={product.id} className="px-2">
