@@ -75,7 +75,7 @@ export default function AboutPage() {
 
             {/* Our Mission — image left, text right */}
             <ValueSplit
-                image="https://picsum.photos/seed/hijabela-craft-1/900/700"
+                image="/assets/images/our-story.png"
                 imageAlt="Handwoven saree detail"
                 heading="Our Mission"
                 className="mx-auto max-w-[1920px] px-6"
@@ -114,7 +114,7 @@ export default function AboutPage() {
 
             {/* Crafted by skilled hands — text left, image right */}
             <ValueSplit
-                image="https://picsum.photos/seed/hijabela-craft-2/900/700"
+                image="/assets/images/our-story-1.png"
                 imageAlt="Woven saree pattern detail"
                 heading="Touched by Skilled Hands"
                 reverse
@@ -145,14 +145,11 @@ export default function AboutPage() {
                 <div className="relative mt-10 aspect-[16/9] w-full overflow-hidden rounded-2xl bg-muted sm:aspect-[16/8]">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                        src="https://picsum.photos/seed/hijabela-lifestyle/1600/900"
+                        src="/assets/images/our-story-banner.png"
                         alt="Models wearing Hijabela sarees"
                         className="absolute inset-0 size-full object-cover"
                         loading="lazy"
                     />
-                    <span className="absolute right-4 top-4 rounded-full bg-background/85 px-4 py-1.5 text-sm font-semibold italic text-blue-950 backdrop-blur-sm sm:right-6 sm:top-6">
-                        Hijabela
-                    </span>
                 </div>
             </section>
 

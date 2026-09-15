@@ -60,7 +60,7 @@ export function Footer() {
     };
 
     return (
-        <footer className={cn("font-secondary w-full border-t bg-muted/30")}>
+        <footer className={cn("font-secondary w-full border-t bg-card")}>
             <div className="mx-auto max-w-[1920px] px-4 py-5 sm:px-6 md:py-8 lg:px-8 lg:py-12">
                 <div className="grid grid-cols-1 gap-10 lg:grid-cols-[280px_repeat(4,1fr)] lg:gap-8">
                     {/* Brand + contact */}

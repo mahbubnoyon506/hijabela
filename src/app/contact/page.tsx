@@ -329,7 +329,7 @@ export default function ContactUs({
                         className="w-full h-full grayscale-[20%] contrast-[105%] hover:grayscale-0 transition-all duration-500" />
 
                     {/* Floating Map Badge */}
-                    <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-3 rounded-xl shadow-lg border border-gray-100 flex items-center gap-3 max-w-xs">
+                    <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-3 rounded-xl shadow-lg border border-gray-100 flex items-center gap-3 max-w-xs">
                         <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
