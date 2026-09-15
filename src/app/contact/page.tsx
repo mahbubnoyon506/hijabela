@@ -98,7 +98,7 @@ export default function ContactUs({
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
 
                     {/* Contact Details Card */}
-                    <div className="lg:col-span-5 bg-white rounded-2xl border border-gray-100 p-6 sm:p-8 transition-all h-full flex flex-col">
+                    <div className="lg:col-span-5 bg-card rounded-2xl border border-gray-100 p-6 sm:p-8 transition-all h-full flex flex-col">
 
                         {/* Card Header */}
                         <div className="flex items-center gap-3 pb-6 mb-6 border-b border-gray-100">
@@ -172,7 +172,7 @@ export default function ContactUs({
                     </div>
 
                     {/* Contact Form Card */}
-                    <div className="lg:col-span-7 bg-white rounded-2xl border border-gray-100 p-6 sm:p-8 h-full flex flex-col">
+                    <div className="lg:col-span-7 bg-card rounded-2xl border border-gray-100 p-6 sm:p-8 h-full flex flex-col">
 
                         <form onSubmit={handleSubmit} className="space-y-5 h-full">
 
@@ -279,7 +279,7 @@ export default function ContactUs({
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full bg-primary text-white font-medium py-3.5 px-6 rounded-lg hover:bg-primary/95 transition-all shadow-md active:scale-[0.99] flex items-center justify-center gap-2 text-sm md:text-base tracking-wide disabled:opacity-75"
+                                    className="w-full bg-primary text-primary-foreground font-medium py-3.5 px-6 rounded-lg hover:bg-primary/95 transition-all shadow-md active:scale-[0.99] flex items-center justify-center gap-2 text-sm md:text-base tracking-wide disabled:opacity-75"
                                 >
                                     {isSubmitting ? (
                                         <span>Sending...</span>
@@ -329,7 +329,7 @@ export default function ContactUs({
                         className="w-full h-full grayscale-[20%] contrast-[105%] hover:grayscale-0 transition-all duration-500" />
 
                     {/* Floating Map Badge */}
-                    <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-3 rounded-xl shadow-lg border border-gray-100 flex items-center gap-3 max-w-xs">
+                    <div className="absolute top-4 left-4 bg-card/95 backdrop-blur-sm px-4 py-3 rounded-xl shadow-lg border border-gray-100 flex items-center gap-3 max-w-xs">
                         <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />

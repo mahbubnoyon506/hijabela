@@ -154,7 +154,7 @@ export function ProductCard({
                 {href ? (
                     <Link
                         href={href}
-                        className="mb-2 text-base font-medium tracking-[2px] min-h-12 line-clamp-2 text-foreground hover:underline"
+                        className="mb-2 text-base font-medium tracking-[2px] line-clamp-2 text-foreground hover:underline"
                     >
                         {name}
                     </Link>
@@ -165,16 +165,16 @@ export function ProductCard({
                 )}
 
                 <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-semibold tracking-[2px] text-primary">
+                        {currency} {price.toFixed(2)}
+                    </span>
                     {hasDiscount && (
-                        <span className="text-sm tracking-[2px] text-muted-foreground line-through">
+                        <span className="text-xs tracking-[2px] text-muted-foreground line-through">
                             {currency} {compareAtPrice!.toFixed(2)}
                         </span>
                     )}
-                    <span className="text-sm tracking-[2px] text-primary dark:text-primary">
-                        {currency} {price.toFixed(2)}
-                    </span>
                     {discountPercent !== null && (
-                        <span className="rounded bg-red-50 px-1.5 py-0.5 text-xs tracking-[2px] text-primary dark:bg-red-500/10 dark:text-primary">
+                        <span className="rounded bg-red-50 px-1.5 py-0.5 text-[10px] font-semibold tracking-[0.5px] text-red-600 dark:bg-red-500/10 dark:text-red-400">
                             {discountPercent}% off
                         </span>
                     )}
