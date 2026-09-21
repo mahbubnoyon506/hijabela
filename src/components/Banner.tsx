@@ -46,7 +46,7 @@ export function Banner({
   autoplay = true,
   autoplaySpeed = 6000,
   className,
-  heightClassName = "h-[420px] sm:h-[480px] md:h-[600px]",
+  heightClassName = "h-[420px] sm:h-[480px] md:h-[700px]",
 }: BannerProps) {
   const sliderRef = React.useRef<Slider | null>(null);
   const videoRefs = React.useRef<Array<HTMLVideoElement | null>>([]);
