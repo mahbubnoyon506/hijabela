@@ -18,41 +18,43 @@ import NewArrivals from "@/components/NewArrivals";
 import PopularProducts from "@/components/PopularProducts";
 
 const slides = [
-  // {
-  //   id: 2,
-  //   type: "video",
-  //   src: "/assets/images/banner-video.mp4",
-  //   poster: "/assets/images/photo.png",
-  //   heading: ""
-  // },
+  {
+    id: 2,
+    type: "video",
+    src: "/assets/images/banner-video.mp4",
+    poster: "/assets/images/photo.png",
+    heading: "",
+  },
   {
     id: 1,
     type: "image",
     src: "/assets/images/download.jpeg",
     heading: "We are more than just a clothing brand",
-    subheading: "We prioritize natural and responsibly sourced fabrics across our collections.",
-    ctas: [
-      { label: "Explore Products", href: "/shop", variant: "outline" },
-    ],
+    subheading:
+      "We prioritize natural and responsibly sourced fabrics across our collections.",
+    ctas: [{ label: "Explore Products", href: "/shop", variant: "outline" }],
   },
 ] satisfies BannerSlide[];
 
 const categories = [
   { id: 1, name: "Skin Care", image: "/assets/images/category-1.png" },
   { id: 2, name: "Hair", image: "/assets/images/category-2.png" },
-  { id: 3, name: "Jewellery", image: "/assets/images/category-1.png", href: "/category/jewellery" },
+  {
+    id: 3,
+    name: "Jewellery",
+    image: "/assets/images/category-1.png",
+    href: "/category/jewellery",
+  },
   { id: 4, name: "Bags", image: "/assets/images/category-2.png" },
   // { id: 5, name: "Belts", image: "/assets/images/category-1.png" },
   // { id: 6, name: "Kids", image: "/assets/images/category-2.png" },
   // { id: 7, name: "Kids", image: "/assets/images/category-1.png" },
   // { id: 8, name: "Kids", image: "/assets/images/category-2.png" },
-]
-
+];
 
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col">
-
       <Banner slides={slides} />
       <CategoryCarousel categories={categories} />
       <NewArrivals />
@@ -66,7 +68,6 @@ export default function Home() {
         ]}
       />
 
-
       <PopularProducts />
 
       {/* <OfferBanner
@@ -78,7 +79,6 @@ export default function Home() {
         imageOpacity={0.6}
         backgroundEffect
       /> */}
-
     </div>
   );
 }
